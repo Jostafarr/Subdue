@@ -8,9 +8,9 @@ import sys
 import time
 import json
 import contextlib
-import Parameters
-import Graph
-import Pattern
+import Subdue.src.Parameters as Parameters
+import Subdue.src.Graph as Graph
+import Subdue.src.Pattern as Pattern
 
 DEBUGFLAG = False
 
@@ -19,7 +19,7 @@ def ReadGraph(inputFileName):
     """Read graph from given filename."""
     inputFile = open(inputFileName)
     jsonGraphArray = json.load(inputFile)
-    graph = Graph.Graph()
+    graph = Subdue.Graph.Graph()
     graph.load_from_json(jsonGraphArray)
     inputFile.close()
     return graph
@@ -224,7 +224,7 @@ def unwrap_output(iterations):
 
 def main():
     print("SUBDUE v1.4 (python)\n")
-    parameters = Parameters.Parameters()
+    parameters = Subdue.Parameters.Parameters()
     parameters.set_parameters(sys.argv)
     graph = ReadGraph(parameters.inputFileName)
     #outputFileName = parameters.outputFileName + ".dot"

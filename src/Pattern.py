@@ -4,8 +4,8 @@
 #
 # Copyright (c) 2017-2021. Washington State University.
 
-from OrderedSet import OrderedSet # specialized Subdue version
-import Graph
+from Subdue.src.OrderedSet import OrderedSet  # specialized Subdue version
+import Subdue.src.Graph as Graph
 
 class Pattern:
     
